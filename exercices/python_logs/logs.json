@@ -1,0 +1,124 @@
+{"ts":"2025-11-07T08:00:00.012Z","level":"INFO","svc":"rtpipe","event":"startup","msg":"starting service","version":"1.0.0","pid":28123,"env":"prod","args":["-window=200ms","-cap=4096","-http=:2112"]}
+{"ts":"2025-11-07T08:00:00.014Z","level":"INFO","svc":"rtpipe","event":"config.loaded","msg":"configuration loaded","window_ms":200,"max_buffer":4096,"metrics_addr":":2112","fetch_timeout_ms":5000}
+{"ts":"2025-11-07T08:00:00.015Z","level":"INFO","svc":"redis","event":"connect","msg":"connecting to redis","host":"redis.internal.svc.cluster.local:6379"}
+{"ts":"2025-11-07T08:00:00.022Z","level":"INFO","svc":"redis","event":"connect.ok","msg":"connected to redis","latency_ms":7}
+{"ts":"2025-11-07T08:00:00.025Z","level":"INFO","svc":"http","event":"metrics.listen","msg":"metrics endpoint listening","addr":":2112"}
+{"ts":"2025-11-07T08:00:00.026Z","level":"DEBUG","svc":"rtpipe","event":"heap.init","msg":"allocating internal heap","capacity":4096}
+{"ts":"2025-11-07T08:00:00.030Z","level":"INFO","svc":"ingest","event":"stdin.listen","msg":"listening on stdin for NDJSON stream"}
+{"ts":"2025-11-07T08:00:10.123Z","level":"DEBUG","svc":"ingest","trace_id":"t-0001","event":"line.read","msg":"read line","len_bytes":142}
+{"ts":"2025-11-07T08:00:10.124Z","level":"INFO","svc":"ingest","trace_id":"t-0001","event":"record.parsed","msg":"parsed event","id":"a1","ts":1730976010123}
+{"ts":"2025-11-07T08:00:10.125Z","level":"DEBUG","svc":"pipe","trace_id":"t-0001","event":"enqueue","msg":"pushed to heap","heap_len":1}
+{"ts":"2025-11-07T08:00:10.126Z","level":"DEBUG","svc":"metrics","event":"inc","metric":"owp_ingested_total","value":1}
+{"ts":"2025-11-07T08:00:10.130Z","level":"DEBUG","svc":"ingest","trace_id":"t-0002","event":"line.read","msg":"read line","len_bytes":160}
+{"ts":"2025-11-07T08:00:10.131Z","level":"INFO","svc":"ingest","trace_id":"t-0002","event":"record.parsed","msg":"parsed event","id":"a2","ts":1730976010110}
+{"ts":"2025-11-07T08:00:10.132Z","level":"DEBUG","svc":"pipe","trace_id":"t-0002","event":"enqueue","msg":"pushed to heap","heap_len":2}
+{"ts":"2025-11-07T08:00:10.150Z","level":"DEBUG","svc":"window","event":"watermark.compute","msg":"computed watermark","now":"2025-11-07T08:00:10.150Z","watermark":"2025-11-07T08:00:09.950Z"}
+{"ts":"2025-11-07T08:00:10.151Z","level":"DEBUG","svc":"window","event":"flush","msg":"flushing eligible items","eligible":2,"heap_len_after":0}
+{"ts":"2025-11-07T08:00:10.152Z","level":"DEBUG","svc":"emit","trace_id":"t-0002","event":"write.attempt","msg":"writing event to stdout","id":"a2"}
+{"ts":"2025-11-07T08:00:10.152Z","level":"INFO","svc":"emit","trace_id":"t-0002","event":"write.ok","msg":"wrote event","id":"a2","elapsed_ms":1}
+{"ts":"2025-11-07T08:00:10.153Z","level":"DEBUG","svc":"emit","trace_id":"t-0001","event":"write.attempt","msg":"writing event to stdout","id":"a1"}
+{"ts":"2025-11-07T08:00:10.154Z","level":"INFO","svc":"emit","trace_id":"t-0001","event":"write.ok","msg":"wrote event","id":"a1","elapsed_ms":2}
+{"ts":"2025-11-07T08:00:10.154Z","level":"DEBUG","svc":"metrics","event":"inc","metric":"owp_emitted_total","value":2}
+{"ts":"2025-11-07T08:00:10.200Z","level":"DEBUG","svc":"ingest","trace_id":"t-0003","event":"line.read","msg":"read line","len_bytes":65536}
+{"ts":"2025-11-07T08:00:10.201Z","level":"WARN","svc":"ingest","trace_id":"t-0003","event":"line.oversize","msg":"line exceeded max allowed size","len_bytes":65536,"max_bytes":32768}
+{"ts":"2025-11-07T08:00:10.201Z","level":"DEBUG","svc":"metrics","event":"inc","metric":"owp_oversize_lines_total","value":1}
+{"ts":"2025-11-07T08:00:10.202Z","level":"INFO","svc":"ingest","trace_id":"t-0003","event":"line.skipped","msg":"skipped oversize line","reason":"oversize"}
+{"ts":"2025-11-07T08:00:15.303Z","level":"DEBUG","svc":"ingest","trace_id":"t-0004","event":"line.read","msg":"read line","len_bytes":210}
+{"ts":"2025-11-07T08:00:15.304Z","level":"INFO","svc":"ingest","trace_id":"t-0004","event":"record.parsed","msg":"parsed event","id":"b1","ts":1730976015300}
+{"ts":"2025-11-07T08:00:15.305Z","level":"DEBUG","svc":"pipe","trace_id":"t-0004","event":"enqueue","msg":"pushed to heap","heap_len":1}
+{"ts":"2025-11-07T08:00:15.350Z","level":"DEBUG","svc":"window","event":"watermark.compute","msg":"computed watermark","now":"2025-11-07T08:00:15.350Z","watermark":"2025-11-07T08:00:15.150Z"}
+{"ts":"2025-11-07T08:00:15.351Z","level":"DEBUG","svc":"window","event":"no-eligible","msg":"no items eligible for emit","heap_len":1}
+{"ts":"2025-11-07T08:00:16.000Z","level":"DEBUG","svc":"ingest","trace_id":"t-0005","event":"line.read","msg":"read line","len_bytes":128}
+{"ts":"2025-11-07T08:00:16.001Z","level":"INFO","svc":"ingest","trace_id":"t-0005","event":"record.parsed","msg":"parsed event","id":"b2","ts":1730976015999}
+{"ts":"2025-11-07T08:00:16.002Z","level":"DEBUG","svc":"pipe","trace_id":"t-0005","event":"enqueue","msg":"pushed to heap","heap_len":2}
+{"ts":"2025-11-07T08:00:16.050Z","level":"DEBUG","svc":"window","event":"watermark.compute","msg":"computed watermark","now":"2025-11-07T08:00:16.050Z","watermark":"2025-11-07T08:00:15.850Z"}
+{"ts":"2025-11-07T08:00:16.051Z","level":"DEBUG","svc":"window","event":"flush","msg":"flushing eligible items","eligible":2,"heap_len_after":0}
+{"ts":"2025-11-07T08:00:16.052Z","level":"INFO","svc":"emit","trace_id":"t-0004","event":"write.ok","msg":"wrote event","id":"b1","elapsed_ms":1}
+{"ts":"2025-11-07T08:00:16.053Z","level":"INFO","svc":"emit","trace_id":"t-0005","event":"write.ok","msg":"wrote event","id":"b2","elapsed_ms":1}
+{"ts":"2025-11-07T08:00:16.053Z","level":"DEBUG","svc":"metrics","event":"inc","metric":"owp_emitted_total","value":2}
+{"ts":"2025-11-07T08:00:20.000Z","level":"INFO","svc":"ingest","event":"backpressure.detected","msg":"high ingest rate detected","rate_per_sec":980,"heap_len":3500}
+{"ts":"2025-11-07T08:00:20.002Z","level":"WARN","svc":"pipe","event":"buffer.high","msg":"heap near capacity","heap_len":3800,"max":4096}
+{"ts":"2025-11-07T08:00:20.100Z","level":"DEBUG","svc":"ingest","trace_id":"t-1001","event":"line.read","msg":"read line","len_bytes":200}
+{"ts":"2025-11-07T08:00:20.101Z","level":"DEBUG","svc":"pipe","trace_id":"t-1001","event":"enqueue","msg":"pushed to heap","heap_len":3801}
+{"ts":"2025-11-07T08:00:20.150Z","level":"DEBUG","svc":"pipe","event":"overflow.handling","msg":"heap full strategy: drop-oldest-by-ts","heap_len":4096}
+{"ts":"2025-11-07T08:00:20.151Z","level":"WARN","svc":"pipe","event":"dropped.overflow","msg":"dropped oldest event due to overflow","dropped_count":1,"dropped_id":"x-0001"}
+{"ts":"2025-11-07T08:00:20.152Z","level":"DEBUG","svc":"metrics","event":"inc","metric":"owp_dropped_overflow_total","value":1}
+{"ts":"2025-11-07T08:00:20.250Z","level":"DEBUG","svc":"window","event":"watermark.compute","msg":"computed watermark","now":"2025-11-07T08:00:20.250Z","watermark":"2025-11-07T08:00:20.050Z"}
+{"ts":"2025-11-07T08:00:20.251Z","level":"DEBUG","svc":"window","event":"flush","msg":"flushing eligible items","eligible":1200,"heap_len_after":2695}
+{"ts":"2025-11-07T08:00:20.260Z","level":"INFO","svc":"emit","event":"bulk.write","msg":"wrote batch to stdout","count":1200,"elapsed_ms":9}
+{"ts":"2025-11-07T08:00:20.261Z","level":"DEBUG","svc":"metrics","event":"inc","metric":"owp_emitted_total","value":1200}
+{"ts":"2025-11-07T08:00:21.500Z","level":"INFO","svc":"http.client","event":"request","msg":"outbound fetch to remote endpoint","url":"https://api.example.com/validate","trace_id":"t-2001","method":"POST","timeout_ms":5000}
+{"ts":"2025-11-07T08:00:21.525Z","level":"ERROR","svc":"http.client","event":"request.failed","msg":"request failed","url":"https://api.example.com/validate","status":502,"trace_id":"t-2001","body":"<html>502 Bad Gateway</html>"}
+{"ts":"2025-11-07T08:00:21.526Z","level":"WARN","svc":"ingest","event":"remote.unavailable","msg":"upstream validation failed, will continue local processing","upstream":"api.example.com"}
+{"ts":"2025-11-07T08:00:21.526Z","level":"DEBUG","svc":"metrics","event":"inc","metric":"owp_upstream_502_total","value":1}
+{"ts":"2025-11-07T08:00:22.000Z","level":"DEBUG","svc":"gc","event":"heap.summary","msg":"runtime mem stats","alloc_kb":8240,"sys_kb":12960,"num_gc":3}
+{"ts":"2025-11-07T08:00:23.120Z","level":"INFO","svc":"ingest","event":"pause.resume","msg":"ingest rate normalized","rate_per_sec":220,"heap_len":1200}
+{"ts":"2025-11-07T08:00:30.000Z","level":"DEBUG","svc":"ingest","trace_id":"t-3001","event":"line.read","msg":"read line","len_bytes":512}
+{"ts":"2025-11-07T08:00:30.001Z","level":"INFO","svc":"ingest","trace_id":"t-3001","event":"record.parsed","msg":"parsed event","id":"c1","ts":1730976030001}
+{"ts":"2025-11-07T08:00:30.002Z","level":"DEBUG","svc":"pipe","trace_id":"t-3001","event":"enqueue","msg":"pushed to heap","heap_len":1201}
+{"ts":"2025-11-07T08:00:30.050Z","level":"DEBUG","svc":"window","event":"watermark.compute","msg":"computed watermark","now":"2025-11-07T08:00:30.050Z","watermark":"2025-11-07T08:00:29.850Z"}
+{"ts":"2025-11-07T08:00:30.051Z","level":"DEBUG","svc":"window","event":"no-eligible","msg":"no items eligible","heap_len":1201}
+{"ts":"2025-11-07T08:00:30.400Z","level":"DEBUG","svc":"http.client","trace_id":"t-3001","event":"fetch","msg":"fetching d.url for enrichment","url":"https://static.example.com/lookup/c1.json"}
+{"ts":"2025-11-07T08:00:30.452Z","level":"INFO","svc":"http.client","trace_id":"t-3001","event":"fetch.ok","msg":"fetched enrichment payload","url":"https://static.example.com/lookup/c1.json","elapsed_ms":52}
+{"ts":"2025-11-07T08:00:30.453Z","level":"DEBUG","svc":"ingest","trace_id":"t-3001","event":"enrichment.apply","msg":"applied enrichment to event","id":"c1"}
+{"ts":"2025-11-07T08:00:30.500Z","level":"DEBUG","svc":"metrics","event":"observe","metric":"owp_latency_emit_ms","value":18}
+{"ts":"2025-11-07T08:00:30.501Z","level":"DEBUG","svc":"metrics","event":"gauge.set","metric":"owp_inflight_gauge","value":1201}
+{"ts":"2025-11-07T08:00:35.000Z","level":"DEBUG","svc":"ingest","event":"line.read","msg":"read line","len_bytes":220}
+{"ts":"2025-11-07T08:00:35.001Z","level":"INFO","svc":"ingest","trace_id":"t-4001","event":"record.parsed","msg":"parsed event","id":"d1","ts":1730976035001}
+{"ts":"2025-11-07T08:00:35.050Z","level":"DEBUG","svc":"window","event":"watermark.compute","msg":"computed watermark","now":"2025-11-07T08:00:35.050Z","watermark":"2025-11-07T08:00:34.850Z"}
+{"ts":"2025-11-07T08:00:35.051Z","level":"DEBUG","svc":"window","event":"flush","msg":"flushing eligible items","eligible":50,"heap_len_after":1151}
+{"ts":"2025-11-07T08:00:35.052Z","level":"INFO","svc":"emit","event":"batch.write","msg":"wrote 50 events","elapsed_ms":4}
+{"ts":"2025-11-07T08:00:35.053Z","level":"DEBUG","svc":"metrics","event":"inc","metric":"owp_emitted_total","value":50}
+{"ts":"2025-11-07T08:00:40.000Z","level":"DEBUG","svc":"ingest","event":"checkpoint.save","msg":"saved ingestion checkpoint to disk","file":"/var/lib/rtpipe/checkpoint-20251107-080040.chk","offset":2345678}
+{"ts":"2025-11-07T08:00:45.000Z","level":"INFO","svc":"health","event":"probe","msg":"liveness probe OK"}
+{"ts":"2025-11-07T08:01:00.000Z","level":"DEBUG","svc":"gc","event":"heap.summary","msg":"runtime mem stats","alloc_kb":10240,"sys_kb":16384,"num_gc":4}
+{"ts":"2025-11-07T08:01:10.100Z","level":"ERROR","svc":"emit","trace_id":"t-5001","event":"write.failed","msg":"stdout blocked > threshold","elapsed_ms":1200,"id":"z-999","action":"open-breaker"}
+{"ts":"2025-11-07T08:01:10.101Z","level":"WARN","svc":"breaker","event":"open","msg":"circuit breaker opened due to blocked stdout","duration_s":5,"reason":"stdout_timeout"}
+{"ts":"2025-11-07T08:01:10.102Z","level":"DEBUG","svc":"metrics","event":"set","metric":"owp_breaker_state","value":1}
+{"ts":"2025-11-07T08:01:10.103Z","level":"INFO","svc":"emit","event":"fallback.buffering","msg":"now buffering minimal payloads & dropping non-critical"}
+{"ts":"2025-11-07T08:01:10.200Z","level":"DEBUG","svc":"pipe","event":"drop.noncritical","msg":"dropped event while breaker open","count":10}
+{"ts":"2025-11-07T08:01:10.201Z","level":"DEBUG","svc":"metrics","event":"inc","metric":"owp_dropped_total","value":10}
+{"ts":"2025-11-07T08:01:12.000Z","level":"DEBUG","svc":"breaker","event":"half-open","msg":"attempting single emit to test downstream"}
+{"ts":"2025-11-07T08:01:12.010Z","level":"INFO","svc":"emit","trace_id":"t-5002","event":"write.ok","msg":"emit succeeded in half-open","id":"z-1000","elapsed_ms":8}
+{"ts":"2025-11-07T08:01:12.011Z","level":"INFO","svc":"breaker","event":"close","msg":"circuit breaker closed (downstream healthy)"}
+{"ts":"2025-11-07T08:01:12.012Z","level":"DEBUG","svc":"metrics","event":"set","metric":"owp_breaker_state","value":0}
+{"ts":"2025-11-07T08:01:12.013Z","level":"INFO","svc":"emit","event":"resume.normal","msg":"resuming normal emission"}
+{"ts":"2025-11-07T08:01:12.014Z","level":"DEBUG","svc":"metrics","event":"observe","metric":"owp_latency_emit_ms","value":15}
+{"ts":"2025-11-07T08:01:15.000Z","level":"DEBUG","svc":"ingest","event":"line.read","msg":"read line","len_bytes":128}
+{"ts":"2025-11-07T08:01:15.001Z","level":"INFO","svc":"ingest","trace_id":"t-6001","event":"record.parsed","msg":"parsed event","id":"e1","ts":1730976075000}
+{"ts":"2025-11-07T08:01:15.050Z","level":"DEBUG","svc":"window","event":"watermark.compute","msg":"computed watermark","now":"2025-11-07T08:01:15.050Z","watermark":"2025-11-07T08:01:14.850Z"}
+{"ts":"2025-11-07T08:01:15.051Z","level":"DEBUG","svc":"window","event":"flush","msg":"flushing eligible items","eligible":1,"heap_len_after":1199}
+{"ts":"2025-11-07T08:01:15.052Z","level":"INFO","svc":"emit","trace_id":"t-6001","event":"write.ok","msg":"wrote event","id":"e1","elapsed_ms":2}
+{"ts":"2025-11-07T08:01:20.000Z","level":"INFO","svc":"metrics","event":"snapshot","msg":"metrics snapshot","owp_ingested_total":5400,"owp_emitted_total":5150,"owp_dropped_total":260,"owp_oversize_lines_total":1,"owp_dropped_overflow_total":1}
+{"ts":"2025-11-07T08:02:00.000Z","level":"DEBUG","svc":"gc","event":"heap.summary","msg":"runtime mem stats","alloc_kb":8700,"sys_kb":14000,"num_gc":6}
+{"ts":"2025-11-07T08:02:05.100Z","level":"WARN","svc":"health","event":"probe","msg":"readiness probe failing external dependency","dependency":"api.example.com","last_status":502}
+{"ts":"2025-11-07T08:02:05.101Z","level":"DEBUG","svc":"metrics","event":"inc","metric":"owp_upstream_502_total","value":2}
+{"ts":"2025-11-07T08:02:10.000Z","level":"INFO","svc":"ingest","event":"rate.adjust","msg":"throttling ingestion source","action":"throttle-10pct","reason":"upstream-degraded"}
+{"ts":"2025-11-07T08:02:30.000Z","level":"DEBUG","svc":"ingest","trace_id":"t-7001","event":"line.read","msg":"read line","len_bytes":128}
+{"ts":"2025-11-07T08:02:30.001Z","level":"INFO","svc":"ingest","trace_id":"t-7001","event":"record.parsed","msg":"parsed event","id":"f1","ts":1730976150001}
+{"ts":"2025-11-07T08:02:30.050Z","level":"DEBUG","svc":"window","event":"watermark.compute","msg":"computed watermark","now":"2025-11-07T08:02:30.050Z","watermark":"2025-11-07T08:02:29.850Z"}
+{"ts":"2025-11-07T08:03:00.000Z","level":"INFO","svc":"ops","event":"maintenance.schedule","msg":"scheduled maintenance window","start":"2025-11-08T01:00:00Z","duration_minutes":30}
+{"ts":"2025-11-07T08:03:05.000Z","level":"DEBUG","svc":"ingest","event":"line.read","msg":"read line","len_bytes":128}
+{"ts":"2025-11-07T08:03:05.001Z","level":"INFO","svc":"ingest","trace_id":"t-8001","event":"record.parsed","msg":"parsed event","id":"g1","ts":1730976185001}
+{"ts":"2025-11-07T08:03:05.050Z","level":"DEBUG","svc":"window","event":"watermark.compute","msg":"computed watermark","now":"2025-11-07T08:03:05.050Z","watermark":"2025-11-07T08:03:04.850Z"}
+{"ts":"2025-11-07T08:03:05.051Z","level":"DEBUG","svc":"window","event":"flush","msg":"flushing eligible items","eligible":2,"heap_len_after":1198}
+{"ts":"2025-11-07T08:03:05.052Z","level":"INFO","svc":"emit","event":"batch.write","msg":"wrote 2 events","elapsed_ms":3}
+{"ts":"2025-11-07T08:04:00.000Z","level":"DEBUG","svc":"metrics","event":"snapshot","msg":"prometheus-format","content":"# TYPE owp_ingested_total counter\nowp_ingested_total 6320\n# TYPE owp_emitted_total counter\nowp_emitted_total 6020\n# TYPE owp_dropped_total counter\nowp_dropped_total 300\n"}
+{"ts":"2025-11-07T08:04:10.100Z","level":"INFO","svc":"ingest","event":"signal.received","msg":"SIGINT received, initiating shutdown sequence"}
+{"ts":"2025-11-07T08:04:10.101Z","level":"INFO","svc":"shutdown","event":"graceful.start","msg":"begin graceful shutdown, will flush eligible events and exit within 2s"}
+{"ts":"2025-11-07T08:04:10.102Z","level":"DEBUG","svc":"window","event":"compute.watermark.on.shutdown","msg":"watermark at shutdown start","now":"2025-11-07T08:04:10.102Z","watermark":"2025-11-07T08:04:09.902Z"}
+{"ts":"2025-11-07T08:04:10.103Z","level":"DEBUG","svc":"window","event":"flush.on.shutdown","msg":"flushing eligible at shutdown","eligible":980,"heap_len_after":218}
+{"ts":"2025-11-07T08:04:10.110Z","level":"INFO","svc":"emit","event":"batch.write","msg":"wrote 980 events during shutdown","elapsed_ms":12}
+{"ts":"2025-11-07T08:04:10.115Z","level":"DEBUG","svc":"metrics","event":"inc","metric":"owp_emitted_total","value":980}
+{"ts":"2025-11-07T08:04:10.116Z","level":"DEBUG","svc":"pipe","event":"drop.on.shutdown","msg":"dropping non-eligible events","count":218}
+{"ts":"2025-11-07T08:04:10.117Z","level":"DEBUG","svc":"metrics","event":"inc","metric":"owp_dropped_total","value":218}
+{"ts":"2025-11-07T08:04:10.118Z","level":"INFO","svc":"shutdown","event":"closing.connections","msg":"closing redis, http listeners, flushing logs"}
+{"ts":"2025-11-07T08:04:10.120Z","level":"INFO","svc":"redis","event":"disconnect","msg":"redis connection closed gracefully"}
+{"ts":"2025-11-07T08:04:10.121Z","level":"INFO","svc":"http","event":"metrics.close","msg":"metrics endpoint stopped"}
+{"ts":"2025-11-07T08:04:10.122Z","level":"INFO","svc":"shutdown","event":"complete","msg":"shutdown complete, exiting","uptime_s":250.110,"processed_total":6320,"emitted_total":7000,"dropped_total":518}
+{"ts":"2025-11-07T08:04:10.123Z","level":"INFO","svc":"rtpipe","event":"exit","msg":"process exiting","code":0}
+{"ts":"2025-11-07T08:04:15.000Z","level":"DEBUG","svc":"postmortem","event":"write.report","msg":"wrote postmortem summary","file":"/var/log/rtpipe/postmortem-20251107-080415.json"}
+{"ts":"2025-11-07T08:04:15.001Z","level":"INFO","svc":"postmortem","event":"report","msg":"summary","processed_total":6320,"emitted_total":7000,"dropped_total":518,"oversize":1,"overflow":1,"avg_emit_latency_ms":12.4,"p95_emit_latency_ms":28}
+{"ts":"2025-11-07T08:04:15.002Z","level":"DEBUG","svc":"postmortem","event":"anomaly.list","msg":"top anomalies","anomalies":[{"type":"stdout_block","count":1,"impact":"drop"},{"type":"upstream_502","count":2,"impact":"degraded_enrichment"}]}
+{"ts":"2025-11-07T08:04:15.100Z","level":"INFO","svc":"ops","event":"notify","msg":"incident report sent to #rtpipe-ops","incident_id":"INC-20251107-0001"}
+
