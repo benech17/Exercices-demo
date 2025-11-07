@@ -1,4 +1,4 @@
-# Java – Débogage d'une calculatrice
+# Java – Débogage e
 
 Objectif:
-- Identifier et corriger des bugs évidents (addition erronée, division par zéro, division entière).
+- Identifier et corriger des bugs à l'aide d'un prompt
